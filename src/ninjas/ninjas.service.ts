@@ -84,6 +84,10 @@ export class NinjasService {
     const ninjas = this.ninjas;
     const ninja = ninjas.find((ni) => ni.id === id);
 
+    if (!ninja) {
+      throw new Error('no ninja found');
+    }
+
     return ninja;
   }
 
