@@ -17,8 +17,8 @@ export class NinjasController {
   constructor(private ninjaService: NinjasService) {}
 
   @Get()
-  getAllNinjas(@Query('type') type: string) {
-    return type;
+  getAllNinjas(@Query('country') country: string) {
+    return this.ninjaService.getAllNinjas(country);
   }
 
   @Get(':id')
