@@ -95,8 +95,10 @@ export class NinjasService {
     const index = this.ninjas.findIndex((ni) => ni.id === id);
     if (index !== -1) {
       this.ninjas.splice(index, 1);
+    } else {
+      throw new Error('no ninja found');
     }
-    return this.ninjas;
+    return 'deleted';
   }
 
   updateNinja(id: string, data: UpdateNinjaDto) {
